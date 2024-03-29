@@ -12,10 +12,9 @@ class Home extends StatefulWidget {
 }
 
 //https://pokeapi.co/api/v2/pokemon/
-// https://pokeapi.co/api/v2/pokemon
+
 class _MyWidgetState extends State<Home> {
   Future<dynamic> getPokemon(name) async {
-    // https://www.fruityvice.com/api/fruit/all
     var url = Uri.https('pokeapi.co', '/api/v2/pokemon/');
     var response = await http.get(url);
     if (response.statusCode == 200) {
@@ -62,7 +61,7 @@ class _MyWidgetState extends State<Home> {
                               showpokemon(
                                   context,
                                   snapshot.data['results'][index]['name'],
-                                  index);
+                                  index + 1);
                               print((snapshot.data['results'][index]));
                             },
                           ));
